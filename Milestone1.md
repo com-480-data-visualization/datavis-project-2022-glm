@@ -41,7 +41,7 @@ In total, there are 204 countries in the dataset, but data we are interested in 
 In the notebook, we have found that data related to *electricity* is available for 77 countries plotted as dots on the map below. It can be noticed that data is missing for most of the countries in Africa as well as most of the islands. This should suffice for our visualisations as we are planning to include only the top pioneers and these countries are likely to be situated in Europe/Americas.
 
 
-![Data plot](dataplot.png)
+![Data plot](./imgs/dataplot.png)
 
 
 As for the *consumption* data, only 2 countries do not have any entries. The missing entries are due to the fact that most of the countires only have 20 out of 121 years of *consumption* data available.
