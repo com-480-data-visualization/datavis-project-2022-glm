@@ -50,7 +50,7 @@ As for the *consumption* data, only 2 countries do not have any entries. The mis
 ## Related Work
 
 
-Obviously, energy consumption and production gets a lot of attention because of its environmental impacts. However, most visualizations are dry and static since the most often appear in scientific contexts such as [here](https://www.frontiersin.org/articles/10.3389/fenrg.2016.00033/full) and [here](https://ec.europa.eu/eurostat/cache/infographs/energy_dashboard/endash.html?geo=EU27_2020&year=2020&language=EN&detail=1&nrg_bal=&unit=MTOE&chart=chart_one,chart_two,chart_tree,chart_four,chart_five,chart_eight&modal=0), with some [exceptions](https://us-sankey.rcc.uchicago.edu).
+Obviously, energy consumption and production gets a lot of attention because of its environmental impacts. However, most visualizations are dry and static since they most often appear in scientific contexts such as [here](https://www.frontiersin.org/articles/10.3389/fenrg.2016.00033/full) and [here](https://ec.europa.eu/eurostat/cache/infographs/energy_dashboard/endash.html?geo=EU27_2020&year=2020&language=EN&detail=1&nrg_bal=&unit=MTOE&chart=chart_one,chart_two,chart_tree,chart_four,chart_five,chart_eight&modal=0), with some [exceptions](https://us-sankey.rcc.uchicago.edu).
 
 There are two notebooks attached to this dataset on Kaggle: 
 https://www.kaggle.com/datasets/pralabhpoudel/world-energy-consumption/code
