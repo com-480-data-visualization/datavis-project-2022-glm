@@ -64,7 +64,3 @@ Additionally, the source of the data is [Our World in Data](https://ourworldinda
 Some sources of inspiration are:
 - [Renewable Electricity Generation evolution](https://engaging-data.com/us-electricity-coal-renewables/): a time series plot allowing to zoom in (using [brush](https://github.com/d3/d3-brush) maybe?)
 - [Wealth distribution](https://engaging-data.com/how-much-wealth-do-the-worlds-richest-billionaires-have/): an interactive treemap
-
-```python
-
-```
