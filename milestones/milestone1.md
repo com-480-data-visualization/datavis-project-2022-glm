@@ -12,7 +12,9 @@ In total, there are 120 columns, but we will extract only the relevant ones, bas
 ## Problematic
 
 
-There is a growing demand for energy across many countries in the world, as people get richer and populations increase. The goal of our visualisation is to discuss if the energy transition is on its way to becoming *clean* and therefore to reduce the amount of carbon emissions. First, we would like to compare the primary energy consumption that comes from the renewables (hydro, solar, wind) and fossils (gas, coal, oil). Then, we would like to show the reader the global renewable energy growth that has been happening during the past few decades on an animated map, but also show him/her country-wise details on demand. Furthermore, it would be interesting to get an insight about the pioneers in this clean energy revolution by looking at the green electricity generation during all these years. 
+As populations increase and people get richer, the demand for energy across many countries in the world is growing. As a consequence, global energy consumption will continue to grow year after year if this increased demand is not offset by energy efficiency improvements in other sectors. This growth makes it more difficult to transition our energy systems from fossil fuels to low-carbon energy sources. Energy produced from low carbon sources must meet this increased demand and attempt to replace existing fossil fuels in the energy mix.
+
+The goal of our visualisation is to discuss if the energy transition is on its way to becoming *clean* and therefore to reduce the amount of carbon emissions. First, we would like to compare the primary energy consumption that comes from the renewables (hydro, solar, wind) and fossils (gas, coal, oil). Then, we would like to show the reader the global renewable energy growth that has been happening during the past few decades on an animated map, but also show him/her country-wise details on demand. Furthermore, it would be interesting to get an insight about the pioneers in this clean energy revolution by looking at the green electricity generation during all these years. 
 
 The target audience is everyone interested in energy generation and consumption, especially those keen on *renewable* power.
 
@@ -52,8 +54,7 @@ As for the *consumption* data, only 2 countries do not have any entries. The mis
 
 Obviously, energy consumption and production gets a lot of attention because of its environmental impacts. However, most visualizations are dry and static since they most often appear in scientific contexts such as [here](https://www.frontiersin.org/articles/10.3389/fenrg.2016.00033/full) and [here](https://ec.europa.eu/eurostat/cache/infographs/energy_dashboard/endash.html?geo=EU27_2020&year=2020&language=EN&detail=1&nrg_bal=&unit=MTOE&chart=chart_one,chart_two,chart_tree,chart_four,chart_five,chart_eight&modal=0), with some [exceptions](https://us-sankey.rcc.uchicago.edu).
 
-There are two notebooks attached to this dataset on Kaggle: 
-https://www.kaggle.com/datasets/pralabhpoudel/world-energy-consumption/code
+There are two notebooks attached to this dataset on [Kaggle](https://www.kaggle.com/datasets/pralabhpoudel/world-energy-consumption/code).
 
 The two notebooks show some basic results from the dataset. They both perform analyses on the data and compute some statistics, but these statistics are presented on static plots and graphs. Our idea is to create a more detailed and interactive visualization of the data, and also to show the evolution up to today.
 
@@ -64,3 +65,7 @@ Additionally, the source of the data is [Our World in Data](https://ourworldinda
 Some sources of inspiration are:
 - [Renewable Electricity Generation evolution](https://engaging-data.com/us-electricity-coal-renewables/): a time series plot allowing to zoom in (using [brush](https://github.com/d3/d3-brush) maybe?)
 - [Wealth distribution](https://engaging-data.com/how-much-wealth-do-the-worlds-richest-billionaires-have/): an interactive treemap
+
+```python
+
+```
