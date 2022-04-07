@@ -38,7 +38,7 @@ In total, there are 204 countries in the dataset, but data we are interested in 
 | wind_consumption       | 10909   |
 | biofuel_consumption    | 9697    |
 
-In the notebook, we have found that data related to *electricity* is available for 77 countries plotted as dots on the map below. It can be noticed that data is missing for most of the countries in Africa as well as most of the islands. This should suffice for our visualisations as we are planning to include only the top pioneers and these countries are likely to be situated in Europe/Americas.
+In the notebook, we have found that data related to *electricity* is available for 77 countries plotted as dots on the map below. It can be noticed that data is missing for most of the countries in Africa as well as most of the islands. This is due to the fact that, in poorer countries, commercially-traded energy sources (such as coal, oil, gas, or grid electricity) is used in smaller quantities than traditional biomass (such as crop residues and wood) which is difficult to quantify. This should suffice for our visualisations as we are planning to include only the top pioneers and these countries are likely to be situated in Europe/Americas.
 
 
 ![Data plot](imgs/dataplot.png)
