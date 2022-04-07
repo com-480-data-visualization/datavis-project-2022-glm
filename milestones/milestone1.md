@@ -12,7 +12,7 @@ In total, there are 120 columns, but we will extract only the relevant ones, bas
 ## Problematic
 
 
-The goal of our visualisation is to discuss if the energy transition is on its way to becoming *clean* and therefore to reduce the amount of carbon emissions. First, we would like to compare the primary energy consumption that comes from the renewables (hydro, solar, wind) and fossils (gas, coal, oil). Then, we would like to show the reader the global renewable energy growth that has been happening during the past few decades on an animated map, but also show him/her country-wise details on demand. Furthermore, it would be interesting to get an insight about the pioneers in this clean energy revolution by looking at the green electricity generation during all these years. 
+There is a growing demand for energy across many countries in the world, as people get richer and populations increase. The goal of our visualisation is to discuss if the energy transition is on its way to becoming *clean* and therefore to reduce the amount of carbon emissions. First, we would like to compare the primary energy consumption that comes from the renewables (hydro, solar, wind) and fossils (gas, coal, oil). Then, we would like to show the reader the global renewable energy growth that has been happening during the past few decades on an animated map, but also show him/her country-wise details on demand. Furthermore, it would be interesting to get an insight about the pioneers in this clean energy revolution by looking at the green electricity generation during all these years. 
 
 The target audience is everyone interested in energy generation and consumption, especially those keen on *renewable* power.
 
