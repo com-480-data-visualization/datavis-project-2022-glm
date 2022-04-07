@@ -3,8 +3,8 @@
 
 | Student's name                | SCIPER |
 | ----------------------------- | ------ |
-| Mihaela Berezantev            | XXXXXX |
-| Léon André Philippe Delachaux | XXXXXX |
+| Mihaela Berezantev            | 287768 |
+| Léon André Philippe Delachaux | 296093 |
 | Gil Christian Tinde           | 302882 |
 
 
