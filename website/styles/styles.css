@@ -1,0 +1,43 @@
+/* .fp-controlArrow {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    margin-top: -38px;
+}
+.fp-controlArrow.fp-prev {
+    left: 50px;
+    width: 0;
+    border-width: 38.5px 34px 38.5px 0;
+    border-color: transparent #fff transparent transparent;
+}
+.fp-controlArrow.fp-next {
+    right: 50px;
+    border-width: 38.5px 0 38.5px 34px;
+    border-color: transparent transparent transparent #fff;
+} */
+/* #myMenu{
+    display: flex;
+       background-color: transparent; 
+list-style:none; 
+position:sticky;
+top:0;
+z-index:2;
+justify-content:space-between;
+} */
+
+.fp-slidesNav{
+    opacity: 0.4;
+}
+
+
+.fp-viewing-Introduction #fp-nav {
+    visibility: hidden;
+}
+
+.section{
+	text-align:center;
+}
