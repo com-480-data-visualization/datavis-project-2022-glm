@@ -8,7 +8,7 @@
 | Gil Christian Tinde           | 302882 |
 
 
-[Milestone 1](#milestone-1)
+[Milestone 1](#milestone-1-(8th-april,-5pm))
 
 
 ## Milestone 1 (8th April, 5pm)
