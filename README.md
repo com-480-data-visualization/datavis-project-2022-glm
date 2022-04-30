@@ -13,6 +13,6 @@
 
 ## Milestone 1
 
-**(8th April, 5pm) - 10% of the final grade**
+**8th April, 5pm - 10% of the final grade**
 
 [Milestone 1 - Report](milestones/milestone1.md)
