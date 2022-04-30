@@ -12,7 +12,7 @@
 <body>
 
 <div id="fullpage">
-	<div class="section active" id="section0"><h1>updated !</h1></div>
+	<div class="section active" id="section0"><h1>new update !</h1></div>
 	<div class="section" id="section1">
 	    <div class="slide "><h1>Simple Demo</h1></div>
 	    <div class="slide active"><h1>Only text</h1></div>
@@ -26,10 +26,21 @@
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="libraries/fullpage.min.js"></script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	var myFullpage = new fullpage('#fullpage', {
 		sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff']
 	});
+</script> -->
+
+
+<script>
+    $(document).ready(function() {
+        $('#fullpage').fullpage({
+            sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff']
+        });
+    });
 </script>
+
+
 </body>
 </html>
