@@ -20,6 +20,8 @@
 
 **6th May, 5pm - 10% of the final grade**
 
+The website can be found [here](https://com-480-data-visualization.github.io/datavis-project-2022-glm/).
+
 ## Milestone 3
 
 **3rd June, 5pm - 80% of the final grade**
