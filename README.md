@@ -8,11 +8,11 @@
 | Gil Christian Tinde           | 302882 |
 
 
-[Milestone 1](#milestone-1-(8th-april,-5pm))
+[Milestone 1](#milestone-1)
 
 
-## Milestone 1 (8th April, 5pm)
+## Milestone 1
 
-**10% of the final grade**
+**(8th April, 5pm) - 10% of the final grade**
 
 [Milestone 1 - Report](milestones/milestone1.md)
