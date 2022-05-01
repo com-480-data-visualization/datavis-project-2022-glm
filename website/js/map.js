@@ -11,7 +11,7 @@ class MapPlot {
 
 
 
-		const map_promise = d3.json("/data/countries.json").then((topojson_raw) => {
+		const map_promise = d3.json("./data/countries.json").then((topojson_raw) => {
 			const countries_paths = topojson.feature(topojson_raw, topojson_raw.objects.countries);
 			return countries_paths.features;
 		});
