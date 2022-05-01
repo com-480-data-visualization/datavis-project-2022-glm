@@ -13,6 +13,12 @@
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="libraries/fullpage.min.js"></script>
+
+    <script src="libraries/d3.min.js"></script>
+    <script src="libraries/topojson.min.js"></script>
+
+    <script src="js/map.js"></script>
+
 </head>
 
 <body>
@@ -31,7 +37,7 @@
                         Landing Page!
                     </h1>
                     <p class="subtitle">
-                        Sample introduction will go <strong>here</strong>!
+                        A Sample introduction will go <strong>here</strong>!
                     </p>
                 </div>
             </div>
@@ -101,8 +107,18 @@
         <div class="section">
             <div class="container">
                 <h1 class="title">
-                    Section Two
+                    Renewables
                 </h1>
+                <div>
+                  <svg id="map-plot" viewBox="0 0 1200 600" width="1200" height="600">
+                  	<style>
+                  		.canton {
+                  			stroke: rgb(25, 25, 25);
+                  			stroke-width: 1px;
+                  		}
+                  	</style>
+                  </svg>
+                </div>
             </div>
         </div>
         <div class="section">
@@ -151,8 +167,6 @@
 <script type="text/javascript">
     var myFullpage = new fullpage('#fullpage', {
         //options here
-
-
         navigation: true,
         scrollBar: false,
         autoScrolling: true,
@@ -178,7 +192,7 @@
         sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
 
         verticalCentered: true,
-        licenseKey: "gplv3-license",
+        licenseKey: "gplv3-license"
     });
 </script>
 
