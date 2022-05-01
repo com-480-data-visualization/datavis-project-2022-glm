@@ -16,17 +16,24 @@ class MapPlot {
 			return countries_paths.features;
 		});
 
+		const data_promise = d3.csv("./data/World_Energy_Consumption.csv").then((data) => {
+			// process the energy data here
+			//console.log(data)
+			return data;
+		});
+
 
 		//We can draw the plot only after all of them have been loaded
-		Promise.all([map_promise]).then((results) => {
+		Promise.all([map_promise, data_promise]).then((results) => {
 			let map_data = results[0];
+			let energy_data = results[1];
 
 			console.log('Data loaded')
 
 			// Draw the cantons
 			var projection = d3.geoNaturalEarth1()
 												 .center([0, 0]) //geographical center
-												 .scale( 210 )
+												 .scale(210)
 												 .translate([this.svg_width/2, this.svg_height/2]) //center in SVG coordinate space
 			const path = d3.geoPath(projection);
 
