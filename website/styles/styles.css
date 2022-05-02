@@ -41,3 +41,8 @@ justify-content:space-between;
 .section{
 	text-align:center;
 }
+
+.footer {
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem;
+}
