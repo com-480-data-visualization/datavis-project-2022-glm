@@ -1,58 +1,58 @@
 class barPlot{
 
-  constructor(svg_element_id){
+  constructor(element_id){
 
-    // set the dimensions and margins of the graph
-    var margin = {top: 30, right: 30, bottom: 70, left: 60},
-        width = 460 - margin.left - margin.right,
-        height = 400 - margin.top - margin.bottom;
+    const margin = {top: 30, right: 30, bottom: 70, left: 60},
+          width = 1000 - margin.left - margin.right,
+          height = 600 - margin.top - margin.bottom;
 
-    this.svg = d3.select('#' + svg_element_id)
-      .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-        .attr("transform",
-              "translate(" + margin.left + "," + margin.top + ")");
+    this.svg = d3.select("#" + element_id)
+                 .append("svg")
+                    .attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom)
+                 .append('g') //g element is used to group SVG shapes together
+                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     // Parse the Data
-    d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum_header.csv").then((data) => {
+    d3.csv("./data/World_Energy_Consumption.csv").then((data) => {
 
-    console.log(data)
-    // X axis
-    var x = d3.scaleBand()
-      .range([ 0, width ])
-      .domain(data.map(function(d) { return d.Country; }))
-      .padding(0.2);
+      //filter Switzerland data and remove rows with empty values
+      const swiss_data = data.filter(d => d.country == "Switzerland" && d.renewables_consumption != '')
 
+      //X axis
+      //Band scales are convenient for charts with an ordinal or categorical dimension.
+      const pointX_to_svgX = d3.scaleBand()
+        .range([0, width ])
+        .domain(swiss_data.map(d => d.year))
+        .padding(0.3); //padding between rectangles
 
       this.svg.append("g")
         .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x))
+        .call(d3.axisBottom(pointX_to_svgX))
         .selectAll("text")
-          .attr("transform", "translate(-10,0)rotate(-45)")
+          .attr("transform", "translate(-5,0)rotate(-45)")
           .style("text-anchor", "end");
 
-      // Add Y axis
-      var y = d3.scaleLinear()
-        .domain([0, 13000])
-        .range([ height, 0]);
+      //Y axis
+      const y_value_range = [0, d3.max(swiss_data.map(d => parseFloat(d.renewables_consumption)))]
+      const pointY_to_svgY = d3.scaleLinear()
+        .domain(y_value_range)
+        .range([height, 0]);
+
       this.svg.append("g")
-        .call(d3.axisLeft(y));
+        .call(d3.axisLeft(pointY_to_svgY));
 
       // Bars
       this.svg.selectAll("mybar")
-        .data(data)
+        .data(swiss_data)
         .enter()
         .append("rect")
-          .attr("x", function(d) { return x(d.Country); })
-          .attr("y", function(d) { return y(d.Value); })
-          .attr("width", x.bandwidth())
-          .attr("height", function(d) { return height - y(d.Value); })
+          .attr("x", d => pointX_to_svgX(d.year))
+          .attr("y", d => pointY_to_svgY(parseFloat(d.renewables_consumption)))
+          .attr("width", pointX_to_svgX.bandwidth())
+          .attr("height", d => height - pointY_to_svgY(d.renewables_consumption))
           .attr("fill", "#000")
-
-      })
-
+    })
   }
 }
 
