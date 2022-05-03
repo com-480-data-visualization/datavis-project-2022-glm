@@ -56,15 +56,28 @@
     text-decoration: none;
     border-radius: 1rem;
     padding: 4px 10px 4px;
+    transition-property: all;
+    transition-duration: 0.4s;
     color: var(--eggshell);
     background: var(--dark-green);
-    transition-property: padding;
-    transition-duration: 0.4s;
-  }
+}
 
-/* Enlarge when hovering */
+/* Enlarge/change background color when hovering */
 .container a:hover {
     padding: 6px 15px 6px;
+    background: var(--light-green);
+}
+
+/* Custom colors for href for welcome page*/
+#glm-welcome .container a {
+    color: var(--eggshell);
+    background: var(--dark-green);
+}
+
+/* Change colors when hovering for welcome page*/
+#glm-welcome .container a:hover {
+    background: var(--eggshell);
+    color: var(--dark-green);
 }
 
 /* Welcome page */
