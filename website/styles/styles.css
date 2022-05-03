@@ -1,6 +1,7 @@
 /* Define some colors */
 :root {
     --eggshell: #F3F4E9;
+    --eggshell_lighter: #F9FAF5;
     --light-green: rgb(105,129,46);
     --dark-green: #3b491a;
   }
@@ -132,4 +133,10 @@ doesn't become blank */
 
 .popover {
     cursor: pointer;
-  }
+}
+
+.popover .card{
+    border-radius: 1rem;
+    background: var(--eggshell_lighter);
+
+}
