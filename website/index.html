@@ -8,24 +8,29 @@
     <meta name="author" content="Mihaela Berezantev, Léon André Philippe Delachaux, Gil Christian Tinde" />
     <link rel="icon" href="green_leaf.png">
 
+    <!-- fullPage -->
     <link rel="stylesheet" type="text/css" href="libraries/fullpage.min.css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="libraries/fullpage.min.js"></script>
+
+    <!-- Spectre -->
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
 
-
+    <!-- Our styles -->
     <link rel="stylesheet" type="text/css" href="styles/styles.css" />
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="libraries/fullpage.min.js"></script>
-
+    <!-- d3 -->
     <script src="libraries/d3.min.js"></script>
     <script src="libraries/topojson.min.js"></script>
 
+    <!-- Our scripts -->
     <script src="js/map.js"></script>
     <script src="js/barplot.js"></script>
 
-    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <!-- ScrollReveal ? -->
+    <!-- <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script> -->
 
 </head>
 
@@ -48,8 +53,24 @@
                     <h1 class="title">
                         Section One - Slide 1
                     </h1>
+                    <div class="columns">
+                        <div class="column col-4 col-mx-auto">
+                            Go to <a href="#SectionTwo">Renewables</a> or go to the <a href="#SectionOne/1">next slide</a>.
+                            Here's a
+                            <div class="popover popover-bottom">
+                                <strong>quick tip!</strong>
+                                <div class="popover-container">
+                                <div class="card">
+                                    <div class="card-body">
+                                        Use the circles (navbar) on the right to go through the different sections, 
+                                        and the circles at the bottom to go through the different slides.
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <p class="subtitle">
-                        Go to <a href="#SectionTwo">Section Two</a> or go to <a href="#SectionOne/1">next slide</a>
                     </p>
                 </div>
             </div>
@@ -162,12 +183,4 @@
         licenseKey: "gplv3-license"
     });
 </script>
-
-<!-- <script>
-    // ScrollReveal().reveal('.fp-viewing-Welcome .container');
-    ScrollReveal().reveal('.active .container');
-    ScrollReveal().clean('.active .container');
-</script> -->
-
-
 </html>

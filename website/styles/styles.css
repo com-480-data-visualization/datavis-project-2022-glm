@@ -119,3 +119,17 @@ doesn't become blank */
     color: var(--dark-green) !important;
     background: var(--eggshell);
 }
+
+.btn{
+    border-radius: 1rem;
+    padding: 4px 10px 4px !important;
+    transition-property: all;
+    transition-duration: 0.4s;
+    color: var(--eggshell) !important;
+    background: var(--dark-green) !important; 
+    border: none;   
+}
+
+.popover {
+    cursor: pointer;
+  }
