@@ -85,15 +85,36 @@
     color: var(--eggshell);
 }
 
+/* Set opacity to 0 for elements to reveal */
 .section .reveal {
 	opacity: 0.0;
 	transition: opacity 2.0s;
 }
 
+/* Set opacity to 0.3 for last element to reveal
+so that when footer becomes active the top section
+doesn't become blank */
 .section .reveal.last {
 	opacity: 0.3;
 }
 
+/* Set opacity to 1 for active elements to reveal */
 .section.active .reveal {
 	opacity: 1;
+}
+
+/* Customize fullpage watermark link in footer */
+.fp-watermark a{
+    opacity: 0.8;
+    color: var(--eggshell) !important;
+    font-size: 14px;
+    border-radius: 1rem;
+    background: var(--dark-green);
+    transition: all 0.4s;
+}
+
+/* Change colors when hovering */
+.fp-watermark a:hover {
+    color: var(--dark-green) !important;
+    background: var(--eggshell);
 }
