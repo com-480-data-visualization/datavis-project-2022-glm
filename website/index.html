@@ -9,7 +9,6 @@
     <link rel="icon" href="green_leaf.png">
 
     <link rel="stylesheet" type="text/css" href="libraries/fullpage.min.css" />
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> -->
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
@@ -31,37 +30,27 @@
 </head>
 
 <body>
-    <!-- <ul id="myMenu">
-      <li data-menuanchor="firstPage" class="active"><a href="#firstPage">First section</a></li>
-      <li data-menuanchor="secondPage"><a href="#secondPage">Second section</a></li>
-      <li data-menuanchor="thirdPage"><a href="#thirdPage">Third section</a></li>
-      <li data-menuanchor="fourthPage"><a href="#fourthPage">Fourth section</a></li>
-  </ul> -->
     <div id="fullpage">
-
-        <div class="section">
-            <div>
-                <div class="container">
-                    <h1 class="title">
-                        A cool title for our project!
-                    </h1>
-                    <p class="subtitle">
-                        A sample introduction will go <strong>here</strong>! Maybe a cool animation or figure appears
-                    </p>
-                </div>
+        <div id="glm-welcome" class="section">
+            <div class="container">
+                <h1 class="title">
+                    A cool title for our project!
+                </h1>
+                <p class="subtitle">
+                    A sample introduction will go <strong>here</strong>! Maybe a cool animation or figure appears.
+                    To start, <a href="#SectionOne">scroll down</a>
+                </p>
             </div>
         </div>
         <div class="section">
             <div class="slide">
-                <div>
-                    <div class="container">
-                        <h1 class="title">
-                            Section One - Slide 1
-                        </h1>
-                        <p class="subtitle">
-                            Go to <a href="#SectionTwo">Section Two</a>
-                        </p>
-                    </div>
+                <div class="container">
+                    <h1 class="title">
+                        Section One - Slide 1
+                    </h1>
+                    <p class="subtitle">
+                        Go to <a href="#SectionTwo">Section Two</a> or go to <a href="#SectionOne/1">next slide</a>
+                    </p>
                 </div>
             </div>
             <div class="slide">
@@ -114,14 +103,14 @@
                     Renewables
                 </h1>
                 <div>
-                  <svg id="map-plot" viewBox="0 0 1200 600" width="1200" height="600">
-                  	<style>
-                  		.canton {
-                  			stroke: rgb(25, 25, 25);
-                  			stroke-width: 1px;
-                  		}
-                  	</style>
-                  </svg>
+                    <svg id="map-plot" viewBox="0 0 1200 600" width="1200" height="600">
+                        <style>
+                            .canton {
+                                stroke: rgb(25, 25, 25);
+                                stroke-width: 1px;
+                            }
+                        </style>
+                    </svg>
                 </div>
             </div>
         </div>
@@ -130,7 +119,7 @@
                 <h1 class="title">
                     Switzerland bar plot using our data set
                 </h1>
-                  <div id="bar-plot"></div>
+                <div id="bar-plot"></div>
             </div>
         </div>
 
@@ -144,58 +133,31 @@
             </div>
         </footer>
     </div>
-
-    <!-- <section class="section">
-    <div class="container">
-      <h1 class="title">
-        Hello World
-      </h1>
-      <p class="subtitle">
-        My first website with <strong>Bulma</strong>!
-      </p>
-    </div>
-  </section> -->
-
-
 </body>
-
-
-<!-- <script type="text/javascript">
-	var myFullpage = new fullpage('#fullpage', {
-		sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
-        navigation: true,
-        controlArrows: false,
-        slidesNavigation: true
-	});
-  </script> -->
 
 <script type="text/javascript">
     var myFullpage = new fullpage('#fullpage', {
-        //options here
         navigation: true,
         scrollBar: false,
         autoScrolling: true,
         slidesNavigation: true,
         recordHistory: false,
-
         navigationTooltips: [
-            "Introduction",
+            "Welcome",
             "Section One",
             "Section Two",
             "Section Three",
             "Footer"
         ],
         anchors: [
-            "Introduction",
+            "Welcome",
             "SectionOne",
             "SectionTwo",
             "SectionThree",
             "Footer"
         ],
-
         controlArrows: false,
-        sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
-
+        sectionsColor: ['#69812e', '#f7f4e9', '#f7f4e9', '#f7f4e9', '#69812e'],
         verticalCentered: true,
         licenseKey: "gplv3-license"
     });

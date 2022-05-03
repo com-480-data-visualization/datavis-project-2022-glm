@@ -1,49 +1,73 @@
-/* .fp-controlArrow {
-    position: absolute;
-    z-index: 4;
-    top: 50%;
-    cursor: pointer;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    margin-top: -38px;
-}
-.fp-controlArrow.fp-prev {
-    left: 50px;
-    width: 0;
-    border-width: 38.5px 34px 38.5px 0;
-    border-color: transparent #fff transparent transparent;
-}
-.fp-controlArrow.fp-next {
-    right: 50px;
-    border-width: 38.5px 0 38.5px 34px;
-    border-color: transparent transparent transparent #fff;
-} */
-/* #myMenu{
-    display: flex;
-       background-color: transparent; 
-list-style:none; 
-position:sticky;
-top:0;
-z-index:2;
-justify-content:space-between;
-} */
+/* Define some colors */
+:root {
+    --eggshell: rgb(243,247,233);
+    --light-green: rgb(105,129,46);
+    --dark-green: #3b491a;
+  }
 
+/* Can change opacity of bottom nav for slides */
 .fp-slidesNav{
-    opacity: 0.4;
+    opacity: 1.0;
 }
 
+/* .fp-tooltip {
+    color: #3b4351 !important;
+} */
 
-.fp-viewing-Introduction #fp-nav {
+/* Style of fullpage tooltip
+(text next to navigation buttons on right side) */
+#fp-nav ul li .fp-tooltip {
+    top: -8px;
+    color: var(--dark-green);
+    font-size: 18px;
+    /* font-weight: bold; */
+}
+
+/* Color of navigation buttons */
+#fp-nav ul li a span, 
+.fp-slidesNav ul li a span{
+  background: var(--light-green);
+}
+
+/* Color of navigation buttons on specific sections/slides */
+/* .fp-viewing-SectionOne-1 .fp-slidesNav ul li a span{
+    background: blue !important;
+} */
+
+/* Make navigation buttons hidden on welcome page  */
+.fp-viewing-Welcome #fp-nav {
     visibility: hidden;
 }
 
+/* Easiest for now */
 .section{
 	text-align:center;
 }
 
+/* Footer with padding */
 .footer {
     padding-top: 2.5rem;
     padding-bottom: 1.5rem;
-    color: rgb(230, 230, 230);
+    color: var(--eggshell);
+}
+
+/* Custom href */
+.container a {
+    text-decoration: none;
+    border-radius: 1rem;
+    padding: 4px 10px 4px;
+    color: var(--eggshell);
+    background: var(--dark-green);
+    transition-property: padding;
+    transition-duration: 0.4s;
+  }
+
+/* Enlarge when hovering */
+.container a:hover {
+    padding: 6px 15px 6px;
+}
+
+/* Welcome page */
+#glm-welcome {
+    color: var(--eggshell);
 }
