@@ -32,7 +32,7 @@
 <body>
     <div id="fullpage">
         <div id="glm-welcome" class="section">
-            <div class="container">
+            <div class="container reveal">
                 <h1 class="title">
                     A cool title for our project!
                 </h1>
@@ -44,7 +44,7 @@
         </div>
         <div class="section">
             <div class="slide">
-                <div class="container">
+                <div class="container reveal">
                     <h1 class="title">
                         Section One - Slide 1
                     </h1>
@@ -55,7 +55,7 @@
             </div>
             <div class="slide">
                 <div>
-                    <div class="container">
+                    <div class="container reveal">
                         <h1 class="title">
                             Slide 2
                         </h1>
@@ -83,14 +83,14 @@
                 </div>
             </div>
             <div class="slide">
-                <div class="container">
+                <div class="container reveal">
                     <h1 class="title">
                         Slide 3
                     </h1>
                 </div>
             </div>
             <div class="slide">
-                <div class="container">
+                <div class="container reveal">
                     <h1 class="title">
                         Slide 4
                     </h1>
@@ -98,24 +98,24 @@
             </div>
         </div>
         <div class="section">
-            <div class="container">
-                <h1 class="title">
-                    Renewables
-                </h1>
-                <div>
-                    <svg id="map-plot" viewBox="0 0 1200 600" width="1200" height="600">
-                        <style>
-                            .canton {
-                                stroke: rgb(25, 25, 25);
-                                stroke-width: 1px;
-                            }
-                        </style>
-                    </svg>
+                <div class="container reveal">
+                    <h1 class="title">
+                        Renewables
+                    </h1>
+                    <div>
+                        <svg id="map-plot" viewBox="0 0 1200 600" width="1200" height="600">
+                            <style>
+                                .canton {
+                                    stroke: rgb(25, 25, 25);
+                                    stroke-width: 1px;
+                                }
+                            </style>
+                        </svg>
+                    </div>
                 </div>
-            </div>
         </div>
         <div class="section">
-            <div class="container">
+            <div class="container reveal last">
                 <h1 class="title">
                     Switzerland bar plot using our data set
                 </h1>
@@ -162,5 +162,12 @@
         licenseKey: "gplv3-license"
     });
 </script>
+
+<!-- <script>
+    // ScrollReveal().reveal('.fp-viewing-Welcome .container');
+    ScrollReveal().reveal('.active .container');
+    ScrollReveal().clean('.active .container');
+</script> -->
+
 
 </html>

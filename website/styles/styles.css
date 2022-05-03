@@ -84,3 +84,16 @@
 #glm-welcome {
     color: var(--eggshell);
 }
+
+.section .reveal {
+	opacity: 0.0;
+	transition: opacity 2.0s;
+}
+
+.section .reveal.last {
+	opacity: 0.3;
+}
+
+.section.active .reveal {
+	opacity: 1;
+}
