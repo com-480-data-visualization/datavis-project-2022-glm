@@ -1,4 +1,3 @@
-
 class MapPlot {
 
 	constructor(svg_element_id) {
