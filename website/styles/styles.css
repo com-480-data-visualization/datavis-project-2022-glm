@@ -43,6 +43,7 @@
 /* Easiest for now */
 .section{
 	text-align:center;
+    cursor: default;
 }
 
 /* Footer with padding */
@@ -138,5 +139,36 @@ doesn't become blank */
 .popover .card{
     border-radius: 1rem;
     background: var(--eggshell_lighter);
+    cursor: default;
 
 }
+
+.arrow-right {
+    width: 0; 
+    height: 0; 
+    border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+    opacity: 0;
+    pointer-events: none !important;
+    transition: opacity 0.3s;
+    border-left: 60px solid var(--light-green);
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    right:50%;
+    /* -ms-transform: translateY(-50%); */
+    transform: translate(1050%,-75%);
+}
+
+
+.popover:hover .arrow-right{
+    opacity: 1.0;
+}
+
+/* Add inside popver div
+<div class="vertical-center">
+<div class="arrow-right"></div>
+</div> */
