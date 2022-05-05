@@ -132,8 +132,13 @@ doesn't become blank */
     border: none;   
 }
 
-.popover {
+.popover .popover-text{
     cursor: pointer;
+    animation: fade 2s ease-in-out infinite;
+}
+
+.popover .popover-text:hover{
+    animation: none;
 }
 
 .popover .card{
@@ -172,3 +177,8 @@ doesn't become blank */
 <div class="vertical-center">
 <div class="arrow-right"></div>
 </div> */
+@keyframes fade {
+    0%    { opacity: 1; }
+    50%   { opacity: 0; }
+    100%   { opacity: 1; }
+  }
