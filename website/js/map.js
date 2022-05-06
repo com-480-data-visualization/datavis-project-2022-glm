@@ -29,7 +29,7 @@ class MapPlot {
 
 			console.log('Data loaded')
 
-			// Draw the cantons
+			// Draw the countries
 			var projection = d3.geoNaturalEarth1()
 												 .center([0, 0]) //geographical center
 												 .scale(210)
