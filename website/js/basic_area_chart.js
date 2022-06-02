@@ -38,11 +38,12 @@ class BasicAreaChart {
 			const x_axis = d3.scaleTime()
 						.domain(d3.extent(energy_data, d => d.year))
 						.range([ 0, width]);
+						// .nice();	
 
 			// Add X axis, rotate tick labels to fit more date ticks
 			svg.append("g")
 			   .attr("transform", "translate(0,"+height+")")
-			   .call(d3.axisBottom(x_axis).ticks(d3.timeYear.every(2))) // tick every 2 years
+			   .call(d3.axisBottom(x_axis).ticks(d3.timeYear.every(3))) // tick every 3 years
 			   .selectAll("text")  
 			   .style("text-anchor", "end")
 			   .attr("dx", "-.3em")
@@ -53,7 +54,8 @@ class BasicAreaChart {
 			// Create Y axis
 			const y_axis = d3.scaleLinear()
 				.domain([0, d3.max(energy_data, d => +d.value)])
-				.range([ height, 0 ]);
+				.range([ height, 0 ])
+				.nice();	
 
 			// Add Y axis
 			svg.append("g")
