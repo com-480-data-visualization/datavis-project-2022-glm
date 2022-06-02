@@ -2,41 +2,26 @@ class BasicAreaChart {
 
 	constructor(element_id) {
 
-
 		const data_promise = d3.csv("./data/World_Energy_Consumption.csv",
 		d => {
 			return {
 				date: d3.timeParse("%Y")(d.year),
 				value : d.coal_consumption,
 				country: d.country
-				// date: 2010,
-				// value : 230
 			}
 		}).then((data) => {
 			return data;
 		});
 
-
-
-
-		//We can draw the plot only after all of them have been loaded
 		Promise.all([data_promise]).then((results) => {
 			var energy_data = results[0];
 
 			console.log('Data loaded')
 
-			const to_exclude = ['Norway']
-			// energy_data = energy_data.filter(x => x.renewables_consumption !=0 && !to_exclude.includes(x.country))
-			energy_data = energy_data.filter(x => x.value !=0 && to_exclude.includes(x.country))
+			const to_include = ['Norway']
+			energy_data = energy_data.filter(x => x.value !=0 && to_include.includes(x.country))
 			const value_range = [0, d3.max(energy_data.map(d => parseFloat(d.renewables_consumption)))]
 
-
-
-			//****** Heatmap legend ******
-			// const width = 1200
-			// const barWidth = 20
-			// const height = 500
-			// const margin = ({top: 20, right: 150, bottom: 30, left: 150})
 			const margin = {top: 10, right: 30, bottom: 30, left: 50},
 			width = 760 - margin.left - margin.right,
 			height = 400 - margin.top - margin.bottom;
@@ -49,26 +34,28 @@ class BasicAreaChart {
 					.attr("transform",
 						  "translate(" + margin.left + "," + margin.top + ")");
 
-			// Add X axis --> it is a date format
+			// Create X axis (date format)
 			const x_axis = d3.scaleTime()
 						.domain(d3.extent(energy_data, d => d.date))
 						.range([ 0, width]);
 
+			// Add X axis, rotate tick labels to fit more date ticks
 			svg.append("g")
 			   .attr("transform", "translate(0,"+height+")")
-			   .call(d3.axisBottom(x_axis).ticks(d3.timeYear.every(2)))
+			   .call(d3.axisBottom(x_axis).ticks(d3.timeYear.every(2))) // tick every 2 years
 			   .selectAll("text")  
 			   .style("text-anchor", "end")
 			   .attr("dx", "-.3em")
 			   .attr("dy", ".5em")
-			   .attr("transform", "rotate(-35)");
+			   .attr("transform", "rotate(-35)"); // rotate by 35 degrees
 
 
-			// Add Y axis
+			// Create Y axis
 			const y_axis = d3.scaleLinear()
 				.domain([0, d3.max(energy_data, d => +d.value)])
 				.range([ height, 0 ]);
 
+			// Add Y axis
 			svg.append("g")
 				.call(d3.axisLeft(y_axis));
 
