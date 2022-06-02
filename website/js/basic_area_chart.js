@@ -20,7 +20,6 @@ class BasicAreaChart {
 
 			const to_include = ['Norway']
 			energy_data = energy_data.filter(x => x.value !=0 && to_include.includes(x.country))
-			const value_range = [0, d3.max(energy_data.map(d => parseFloat(d.renewables_consumption)))]
 
 			const margin = {top: 10, right: 30, bottom: 30, left: 50},
 			width = 760 - margin.left - margin.right,
