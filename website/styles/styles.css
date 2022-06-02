@@ -25,7 +25,7 @@
 }
 
 /* Color of navigation buttons */
-#fp-nav ul li a span, 
+#fp-nav ul li a span,
 .fp-slidesNav ul li a span{
   background: var(--light-green);
 }
@@ -87,6 +87,55 @@
     color: var(--eggshell);
 }
 
+#play-button {
+      background: #212529;
+      padding-right: 26px;
+      border-radius: 3px;
+      border: none;
+      color: white;
+      margin: 0;
+      padding: 0 12px;
+      width: 70px;
+      cursor: pointer;
+      height: 30px;
+    }
+
+
+.ticks {
+      font-size: 10px;
+}
+
+.track,
+.track-inset,
+.track-overlay {
+  stroke-linecap: round;
+}
+
+.track {
+  stroke: #000;
+  stroke-opacity: 0.3;
+  stroke-width: 10px;
+}
+
+.track-inset {
+  stroke: #dcdcdc;
+  stroke-width: 8px;
+}
+
+.track-overlay {
+  pointer-events: stroke;
+  stroke-width: 50px;
+  stroke: transparent;
+  cursor: crosshair;
+}
+
+.handle {
+  fill: #fff;
+  stroke: #000;
+  stroke-opacity: 0.5;
+  stroke-width: 1.25px;
+}
+
 /* Set opacity to 0 for elements to reveal */
 .section .reveal {
 	opacity: 0.0;
@@ -128,8 +177,8 @@ doesn't become blank */
     transition-property: all;
     transition-duration: 0.4s;
     color: var(--eggshell) !important;
-    background: var(--dark-green) !important; 
-    border: none;   
+    background: var(--dark-green) !important;
+    border: none;
 }
 
 .popover .popover-text{
@@ -149,8 +198,8 @@ doesn't become blank */
 }
 
 .arrow-right {
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-top: 60px solid transparent;
     border-bottom: 60px solid transparent;
     opacity: 0;
