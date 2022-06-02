@@ -5,8 +5,8 @@ class BasicAreaChart {
 		const data_promise = d3.csv("./data/World_Energy_Consumption.csv",
 		d => {
 			return {
-				date: d3.timeParse("%Y")(d.year),
-				value : d.coal_consumption,
+				year: d3.timeParse("%Y")(d.year),
+				value: d.coal_consumption,
 				country: d.country
 			}
 		}).then((data) => {
@@ -36,7 +36,7 @@ class BasicAreaChart {
 
 			// Create X axis (date format)
 			const x_axis = d3.scaleTime()
-						.domain(d3.extent(energy_data, d => d.date))
+						.domain(d3.extent(energy_data, d => d.year))
 						.range([ 0, width]);
 
 			// Add X axis, rotate tick labels to fit more date ticks
@@ -66,7 +66,7 @@ class BasicAreaChart {
 				.attr("stroke", "#69b3a2")
 				.attr("stroke-width", 1.5)
 				.attr("d", d3.area()
-					  .x(d => x_axis(d.date))
+					  .x(d => x_axis(d.year))
 					  .y0(y_axis(0))
 					  .y1(d => y_axis(d.value)));
 		})
