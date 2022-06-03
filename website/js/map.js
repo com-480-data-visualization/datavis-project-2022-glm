@@ -149,6 +149,10 @@ class MapPlot {
 						.attr("transform","translate("+[chart_margin.left, chart_margin.top]+")");
 
 					const selected_country_data = energy_data.filter(x => x.country == d.properties.name)
+					const max_year = parseInt(d3.max(selected_country_data.map(x => x.year)))
+					const max_year_population = selected_country_data.filter(x => x.year == max_year).map(x => parseInt(x.population))
+
+					console.log(max_year_population)
 
 					const y_value_range = [0, d3.max(selected_country_data.map(d => parseFloat(d.renewables_consumption)))]
 					const y = d3.scaleLinear()
@@ -200,25 +204,15 @@ class MapPlot {
 					    .attr("y", 30)
 					    .attr("text-anchor","middle");
 
-						var labeled_rect = chart.append("rect")
-														.attr("x", chart_width + 20)
-														.attr("y", 20)
-														.attr("height", 20)
-														.attr("width", 20)
-														.attr("class", "labelbox")
-														.style("fill", "#212529");
-
 						var closeArea = chart.append('text')
-																	.text('x')
-																	.attr("x", chart_width + 24.5)
+																	.text('\ue880')
+																	.attr("x", chart_width + 30)
 																	.attr("y", 18)
-																	.attr("dominant-baseline","text-before-edge")
-																	.attr("font-family", "sans-serif")
+																	.attr("font-family", "Linearicons-Free")
 																	.attr("font-size", "20px")
-																	.attr("fill", "white");
+																	.attr("fill", "212529");
 
-						//remove the chart if you click on either
-						labeled_rect.on("click", x => d3.select("#chart").remove())
+						//remove the chart if you click on it
 						closeArea.on("click", x => d3.select("#chart").remove())
 					}
 			}
