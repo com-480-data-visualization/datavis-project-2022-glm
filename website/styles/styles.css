@@ -96,10 +96,13 @@
       margin: 0;
       padding: 0 12px;
       width: 70px;
+      height: 40px;
       cursor: pointer;
-      height: 30px;
-    }
+}
 
+.leaflet-popup-content {
+        width: auto !important;
+}
 
 .ticks {
       font-size: 10px;

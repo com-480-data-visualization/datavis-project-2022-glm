@@ -33,8 +33,6 @@ class MapPlot {
 			energy_data = energy_data.filter(x => x.renewables_consumption !=0 && !to_exclude.includes(x.country))
 			const value_range = [0, d3.max(energy_data.map(d => parseFloat(d.renewables_consumption)))]
 
-
-
 			//****** Heatmap legend ******
 			const width = 1200
 			const barWidth = 20
@@ -86,8 +84,6 @@ class MapPlot {
 			.call(axisLeft);
 
 			//****** Draw countries******
-
-
 			var projection = d3.geoNaturalEarth1()
 			.center([0, 0]) //geographical center
 			.scale(180)
@@ -105,7 +101,6 @@ class MapPlot {
 		    .style("border-width", "2px")
 		    .style("border-radius", "5px")
 		    .style("padding", "5px")
-
 
 			// Three functions that change the tooltip when user hover / move / leave a cell
 			var mouseover = function(d) {
@@ -131,11 +126,107 @@ class MapPlot {
 					.style("stroke", "none")
 			}
 
+			const chart_width = 700;
+			const chart_height = 100;
+			var chart_margin = {left:50,right:50,top:50,bottom:40}
+
+			//add a chart with country-wise details
+			var mouseclick = function(d) {
+				//remove previous chart if existing
+				d3.select("#chart").remove()
+
+				//only show a chart if data is available
+				if (d.renew_cons !== "unavailable data"){
+
+					var chart = d3.select("#map-plot")
+						.append("div")
+						.attr("id", "chart")
+						.append("svg")
+						.attr("width", chart_width + chart_margin.left + chart_margin.right)
+						.attr("height", chart_height + chart_margin.top + chart_margin.bottom)
+
+					var g = chart.append("g")
+						.attr("transform","translate("+[chart_margin.left, chart_margin.top]+")");
+
+					const selected_country_data = energy_data.filter(x => x.country == d.properties.name)
+
+					const y_value_range = [0, d3.max(selected_country_data.map(d => parseFloat(d.renewables_consumption)))]
+					const y = d3.scaleLinear()
+								    .domain(y_value_range)
+								    .range([chart_height, 0]);
+
+					var yAxis = d3.axisLeft(y)
+										    .ticks(5)
+										    .scale(y);
+
+					g.append("g").call(yAxis);
+
+					const start_year = parseInt(d3.min(selected_country_data.map(x => x.year)))
+					const end_year = parseInt(d3.max(selected_country_data.map(x => x.year)))
+
+					var x = d3.scaleBand()
+								    .domain(d3.range(start_year, end_year + 1))
+								    .range([0, chart_width])
+										.padding(0.3)
+
+					var xAxis = d3.axisBottom()
+						    				.scale(x)
+
+					g.append("g")
+			      .attr("transform", "translate(0," + chart_height + ")")
+			      .call(xAxis)
+						.selectAll("text")
+						.attr("text-anchor","end")
+		    		.attr("transform","rotate(-90)translate(-12,-15)")
+
+					var rects = g.selectAll("rect")
+									    .data(selected_country_data)
+									    .enter()
+									    .append("rect")
+									    .attr("y", chart_height)
+									    .attr("height",0)
+									    .attr("width", x.bandwidth())
+									    .attr("x", d => x(d.year))
+									    .attr("fill","#2D6A4F")
+									    .transition()
+									    .attr("height", d => chart_height - y(d.renewables_consumption))
+									    .attr("y", d => y(d.renewables_consumption))
+									    .duration(1000);
+
+						var title = chart.append("text")
+					    .style("font-size", "20px")
+					    .text(d.properties.name)
+					    .attr("x", chart_width/2 + chart_margin.left)
+					    .attr("y", 30)
+					    .attr("text-anchor","middle");
+
+						var labeled_rect = chart.append("rect")
+														.attr("x", chart_width + 20)
+														.attr("y", 20)
+														.attr("height", 20)
+														.attr("width", 20)
+														.attr("class", "labelbox")
+														.style("fill", "#212529");
+
+						var closeArea = chart.append('text')
+																	.text('x')
+																	.attr("x", chart_width + 24.5)
+																	.attr("y", 18)
+																	.attr("dominant-baseline","text-before-edge")
+																	.attr("font-family", "sans-serif")
+																	.attr("font-size", "20px")
+																	.attr("fill", "white");
+
+						//remove the chart if you click on either
+						labeled_rect.on("click", x => d3.select("#chart").remove())
+						closeArea.on("click", x => d3.select("#chart").remove())
+					}
+			}
+
 			//draw the map with the first year unavailable
 			const data_first_year_available = energy_data.filter(x => x.year === d3.min(energy_data.map(x => x.year)))
 			const map_country_renew_cons = new Map();
 			data_first_year_available.map(x => map_country_renew_cons.set(x.country, x.renewables_consumption))
-
 
 			var countries = svg.selectAll("path")
 				.data(map_data)
@@ -151,14 +242,13 @@ class MapPlot {
 				.on("mouseover", mouseover)
 		    .on("mousemove", mousemove)
 		    .on("mouseleave", mouseleave)
-
-
+				.on("click", mouseclick)
 
 			//*** Time Slider ***//
-			const slider_height = 100
+			const slider_height = 80
 			var slider_svg = d3.select("#slider")
 												 .append("svg")
-												 .attr("width", (width))
+												 .attr("width", width)
 												 .attr("height", slider_height)
 
 			var slider = slider_svg.append("g")
@@ -223,13 +313,12 @@ class MapPlot {
 
 			//This function is called by the play button
 			playButton.on("click", function(){
-				var button = d3.select(this);
-				if(button.text() == "Play"){
+				if(playButton.text() == "Play"){
 					timer = setInterval(step, 100); //repeatedly calls step with a 100ms time delay between each call.
-					button.text("Pause")
+					playButton.text("Pause")
 				}else{
 					clearInterval(timer);
-					button.text("Play")
+					playButton.text("Play")
 				}
 			})
 
