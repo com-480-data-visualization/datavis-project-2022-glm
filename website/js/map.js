@@ -157,7 +157,7 @@ class MapPlot {
 					chart.append('text')
 							.text('\ue82b')
 							.attr("x", chart_width/2 )
-							.attr("y", 60)
+							.attr("y", 50)
 							.attr("font-family", "Linearicons-Free")
 							.attr("font-size", "20px")
 							.attr("fill", "212529");
@@ -166,7 +166,7 @@ class MapPlot {
 					chart.append('text')
 							.text(max_year_population[0].toLocaleString('en', {useGrouping:true}))
 							.attr("x", chart_width/2 + 30)
-							.attr("y", 60)
+							.attr("y", 50)
 							.attr("font-size", "20px")
 							.attr("font-family", "-apple-system")
 							.attr("fill", "212529");
