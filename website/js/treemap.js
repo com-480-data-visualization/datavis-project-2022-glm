@@ -4,29 +4,55 @@ class treeMap{
           width = 500 - margin.left - margin.right,
           height = 500 - margin.top - margin.bottom;
 
-    this.svg = d3.select("#" + element_id)
+    var svg = d3.select("#" + element_id)
                  .append("svg")
                     .attr("width", width + margin.left + margin.right)
                     .attr("height", height + margin.top + margin.bottom)
                  .append('g') //g element is used to group SVG shapes together
                     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    d3.csv('./data/World_Energy_Consumption.csv', function(data) {
-      const data_2014 = Array.from(data).filter(d => d.renewables_consumption != '' && data.year == 2014);
+    d3.csv('https://github.com/com-480-data-visualization/datavis-project-2022-glm/blob/main/website/data/World_Energy_Consumption.csv', function(data) {
+      const data_2014 = Array.from(data).filter(d => d.renewables_consumption != '' && d.year == 2014);
+
+      /*
+      function sumWorldwideGross(group) {
+        return d3.sum(group, function(d) {
+          return d.renewables_consumption;
+        });
+      };
+      d3.nest().rollup(data_2014,
+                 sumWorldwideGross,
+                 d => d.year,
+                 d => d.country
+                );
+      */
+
+      let groups = d3.nest()
+        .key(function (d) { return d.renewables_consumption; })
+        .entries(data_2014)
+
+      /*
+      d3.nest().rollup(data_2014,
+                       sumWorldwideGross,
+                       d => d.year,
+                       d => d.country
+                      );
+      */
+      let root = d3.hierarchy(groups);
 
       //var root = d3.stratify()
-        //.id(function(d) { return d.country; })   // Name of the entity (column name is name in csv)
+       // .id(function(d) { return d.country; })   // Name of the entity (column name is name in csv)
         //.parentId(function(d) { return d.year; })   // Name of the parent (column name is parent in csv)
         //(data_2014);
-      var root = d3.hierarchy(data_2014).sum(function(d){ 
-        return d.renewables_consumption})
+      //var root = d3.hierarchy(data_2014).sum(function(d){ 
+      //  return d.renewables_consumption})
 
       d3.treemap()
         .size([width, height])
         .padding(4)
         (root);
 
-      this.svg
+      svg
         .selectAll("rect")
         .data(root.leaves())
         .enter()
@@ -38,7 +64,7 @@ class treeMap{
           .style("stroke", "black")
           .style("fill", "#69b3a2");
 
-      this.svg
+      svg
         .selectAll("text")
         .data(root.leaves())
         .enter()
