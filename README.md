@@ -21,8 +21,24 @@
 **6th May, 5pm - 10% of the final grade**
 
 [Milestone 2 - Report (PDF)](milestones/milestone2.pdf) \
-The skeleton of our website can be found [here](https://com-480-data-visualization.github.io/datavis-project-2022-glm/).
 
 ## Milestone 3
 
 **3rd June, 5pm - 80% of the final grade**
+
+Milestone 3 - Process Book
+
+Our website can be found [here](https://com-480-data-visualization.github.io/datavis-project-2022-glm/).
+
+The screencast video can be found here
+
+Project Organization
+
+```
+├───milestones      (Milestones)
+└───website         (Website files)
+     ├───data       
+     ├───js         (Our .js files)
+     ├───libraries  (Js files form libraries used)
+     └───style      (CSS)
+```
