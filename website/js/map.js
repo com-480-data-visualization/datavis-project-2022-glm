@@ -151,8 +151,25 @@ class MapPlot {
 					const selected_country_data = energy_data.filter(x => x.country == d.properties.name)
 					const max_year = parseInt(d3.max(selected_country_data.map(x => x.year)))
 					const max_year_population = selected_country_data.filter(x => x.year == max_year).map(x => parseInt(x.population))
+					const max_year_gdp = selected_country_data.filter(x => x.year == max_year).map(x => parseInt(x.gdp) )
 
-					console.log(max_year_population)
+					//population icon
+					chart.append('text')
+							.text('\ue82b')
+							.attr("x", chart_width/2 )
+							.attr("y", 60)
+							.attr("font-family", "Linearicons-Free")
+							.attr("font-size", "20px")
+							.attr("fill", "212529");
+
+					//population number
+					chart.append('text')
+							.text(max_year_population[0].toLocaleString('en', {useGrouping:true}))
+							.attr("x", chart_width/2 + 30)
+							.attr("y", 60)
+							.attr("font-size", "20px")
+							.attr("font-family", "-apple-system")
+							.attr("fill", "212529");
 
 					const y_value_range = [0, d3.max(selected_country_data.map(d => parseFloat(d.renewables_consumption)))]
 					const y = d3.scaleLinear()
@@ -199,6 +216,7 @@ class MapPlot {
 
 						var title = chart.append("text")
 					    .style("font-size", "20px")
+							.attr("font-family", "-apple-system")
 					    .text(d.properties.name)
 					    .attr("x", chart_width/2 + chart_margin.left)
 					    .attr("y", 30)
