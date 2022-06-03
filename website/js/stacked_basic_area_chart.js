@@ -55,8 +55,11 @@ class StackedBasicAreaChart {
 			// 	(energy_data)
 
 			const energy_keys = ["gas", "coal", "oil","solar","wind","hydro"]
+			const order = d3.stackOrderDescending
 			var stackGen = d3.stack()
-				.keys(energy_keys);
+				.keys(energy_keys)
+				.order(order);
+
 			var stackedData = stackGen(energy_data)
 			// stackedData = stackedData.map(d => {
 			// 	d.forEach(v => {
