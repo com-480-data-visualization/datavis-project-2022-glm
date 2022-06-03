@@ -14,12 +14,12 @@ class treeMap{
     d3.csv('./data/World_Energy_Consumption.csv', function(data) {
       const data_2014 = Array.from(data).filter(d => d.renewables_consumption != '' && data.year == 2014);
 
-      var root = d3.stratify()
-        .id(function(d) { return d.country; })   // Name of the entity (column name is name in csv)
-        .parentId(function(d) { return d.year; })   // Name of the parent (column name is parent in csv)
-        (data_2014);
-      //var root = d3.hierarchy(data_2014).sum(function(d){ 
-        //return d.renewables_consumption})
+      //var root = d3.stratify()
+        //.id(function(d) { return d.country; })   // Name of the entity (column name is name in csv)
+        //.parentId(function(d) { return d.year; })   // Name of the parent (column name is parent in csv)
+        //(data_2014);
+      var root = d3.hierarchy(data_2014).sum(function(d){ 
+        return d.renewables_consumption})
 
       d3.treemap()
         .size([width, height])
