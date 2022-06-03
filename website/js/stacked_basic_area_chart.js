@@ -53,7 +53,7 @@ class StackedBasicAreaChart {
 			var stackedDataExpanded = stackGen_expanded(energy_data)
 
 			// Create main svg with dimensions
-			const margin = {top: 40, right: 30, bottom: 30, left: 50},
+			const margin = {top: 40, right: 30, bottom: 50, left: 50},
 			width = 860 - margin.left - margin.right,
 			height = 500 - margin.top - margin.bottom;
 
@@ -107,25 +107,28 @@ class StackedBasicAreaChart {
 				.range(color_mappings)
 
 			// Add X axis label:
-			var X_AXIS_LABEL = svg.append("text")
+			var X_AXIS_LABEL = inner.append("text")
+				.attr("font-family", "-apple-system")
 				.attr("text-anchor", "end")
-				.attr("x", width)
-				.attr("y", height+margin.top+margin.bottom)
+				.attr("x", (width+margin.left+margin.right)/2)
+				.attr("y", height+margin.top)
 				.text("Time (years)");
 
-			// // Add Y axis label:
+			// Add Y axis label:
 			var Y_AXIS_LABEL = svg.append("text")
+				.attr("font-family", "-apple-system")
 				.attr("text-anchor", "end")
 				.attr("x", 0)
-				.attr("y", -20 )
-				.text("# of baby born")
+				.attr("y", 20)
+				.text("TWh")
 				.attr("text-anchor", "start")
 
 			// Wrapper for update function
-			function update_wrapper(data_, shift_val) {
-				// Update y axis
+			function update_wrapper(data_, shift_val, y_axis_text) {
+				// Update y axis and label
 				y_axis.domain([ 0, shift_val ]);
 				Y_AXIS.transition().duration(1000).call(d3.axisLeft(y_axis).ticks(10))
+				Y_AXIS_LABEL.transition().duration(1000).text(y_axis_text);
 				// Get selection of data
 				var chart_selection = inner.select("g") // If you don't select group first
 										 .selectAll("path") // one area/path is shifted down
@@ -150,10 +153,10 @@ class StackedBasicAreaChart {
 
 			// Individual update functions for full and expanded data
 			function update_full() {
-				update_wrapper(stackedData, y_max);
+				update_wrapper(stackedData, y_max, "TWh");
 			}
 			function update_expanded() {
-				update_wrapper(stackedDataExpanded, 1);
+				update_wrapper(stackedDataExpanded, 1, "Proportion");
 			}
 
 			// Get buttons to trigger chart update
