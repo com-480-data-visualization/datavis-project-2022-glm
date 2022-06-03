@@ -69,11 +69,6 @@
     background: var(--light-green) !important;    
 }
 
-.btn:hover {
-    padding: 6px 15px 6px !important;
-    background: var(--light-green) !important;    
-}
-
 /* Enlarge/change background color when hovering */
 .container a:hover {
     padding: 6px 15px 6px;
