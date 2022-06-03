@@ -54,7 +54,7 @@
 }
 
 /* Custom href */
-.container a, .btn {
+.container a {
     text-decoration: none;
     border-radius: 1rem;
     padding: 4px 10px 4px;
@@ -64,7 +64,17 @@
     background: var(--dark-green);
 }
 
-.btn:hover {
+.btn {
+    text-decoration: none;
+    border-radius: 1rem;
+    padding: 4px 10px 4px;
+    transition-property: all;
+    transition-duration: 0.4s;
+    color: var(--eggshell);
+    background: var(--dark-green);    
+}
+
+.container .btn:hover {
     padding: 6px 15px 6px !important;
     background: var(--light-green) !important;    
 }
