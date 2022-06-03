@@ -16,9 +16,9 @@ class StackedBasicAreaChart {
 				hydro: d.hydro_consumption,
 				country: d.country
 			}
-		}).then((dataa) => {
+		}).then((data) => {
 
-			var energy_data = dataa;
+			var energy_data = data;
 
 
 			console.log('Data loaded')
