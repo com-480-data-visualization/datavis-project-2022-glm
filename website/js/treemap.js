@@ -11,7 +11,7 @@ class treeMap{
                  .append('g') //g element is used to group SVG shapes together
                     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    d3.csv('https://github.com/com-480-data-visualization/datavis-project-2022-glm/blob/main/website/data/World_Energy_Consumption.csv', function(data) {
+    d3.csv("./data/World_Energy_Consumption.csv", function(data) {
       const data_2014 = Array.from(data).filter(d => d.renewables_consumption != '' && d.year == 2014);
 
       /*
