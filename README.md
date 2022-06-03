@@ -26,7 +26,7 @@
 
 **3rd June, 5pm - 80% of the final grade**
 
-Milestone 3 - Process Book
+[Milestone 3 - Process Book](https://github.com/com-480-data-visualization/datavis-project-2022-glm/blob/main/milestones/Milestone3.pdf)
 
 Our website can be found [here](https://com-480-data-visualization.github.io/datavis-project-2022-glm/).
 
