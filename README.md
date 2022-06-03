@@ -30,7 +30,7 @@ Milestone 3 - Process Book
 
 Our website can be found [here](https://com-480-data-visualization.github.io/datavis-project-2022-glm/).
 
-The screencast video can be found [here](https://drive.google.com/drive/u/0/folders/1H0mf4uaGUY_uGpoUcw5JvXFrajq49gqR)
+The screencast video can be found [here](https://www.youtube.com/watch?v=urpZksDOSAY&feature=youtu.be)
 
 Project Organization
 
